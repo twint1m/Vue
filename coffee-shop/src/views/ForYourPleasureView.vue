@@ -48,59 +48,16 @@
         <div class="row">
           <div class="col-lg-10 offset-lg-1">
             <div class="shop__wrapper">
-              <div class="best__item">
-                <img
-                  :src="require(`@/assets/img/${cards[0].path}`)"
-                  :alt="cards[0].path"
-                />
-                <div class="best__item-title">{{ cards[0].text }}</div>
-                <div class="best__item-price">{{ cards[0].price }}</div>
-              </div>
-
-              <div class="best__item">
-                <img
-                  :src="require(`@/assets/img/${cards[1].path}`)"
-                  :alt="cards[0].path"
-                />
-                <div class="best__item-title">{{ cards[1].text }}</div>
-                <div class="best__item-price">{{ cards[1].price }}</div>
-              </div>
-
-              <div class="best__item">
-                <img
-                  :src="require(`@/assets/img/${cards[2].path}`)"
-                  :alt="cards[0].path"
-                />
-                <div class="best__item-title">{{ cards[2].text }}</div>
-                <div class="best__item-price">{{ cards[2].price }}</div>
-              </div>
-
-              <div class="best__item">
-                <img
-                  :src="require(`@/assets/img/${cards[3].path}`)"
-                  :alt="cards[0].path"
-                />
-                <div class="best__item-title">{{ cards[3].text }}</div>
-                <div class="best__item-price">{{ cards[3].price }}</div>
-              </div>
-
-              <div class="best__item">
-                <img
-                  :src="require(`@/assets/img/${cards[4].path}`)"
-                  :alt="cards[0].path"
-                />
-                <div class="best__item-title">{{ cards[4].text }}</div>
-                <div class="best__item-price">{{ cards[4].price }}</div>
-              </div>
-
-              <div class="best__item">
-                <img
-                  :src="require(`@/assets/img/${cards[5].path}`)"
-                  :alt="cards[0].path"
-                />
-                <div class="best__item-title">{{ cards[5].text }}</div>
-                <div class="best__item-price">{{ cards[5].price }}</div>
-              </div>
+              <card-component
+                v-for="card in cards"
+                :key="card.id"
+                :name="card.text"
+                :price="card.price"
+                :image="card.path"
+                :country="card.country"
+                class-item="shop__item"
+              >
+              </card-component>
             </div>
           </div>
         </div>
@@ -119,39 +76,45 @@ export default {
       cards: [
         {
           id: 0,
-          path: "coffee-1.jpg",
+          path: "good-1.jpg",
           text: "Solimo Coffee Beans 2kg",
-          price: "10.73$",
+          price: 10.73,
+          country: "Brazil",
         },
         {
           id: 1,
-          path: "coffee-1.jpg",
+          path: "good-1.jpg",
           text: "Solimo Coffee Beans 2kg",
-          price: "10.73$",
+          price: 10.73,
+          country: "Brazil",
         },
         {
           id: 2,
-          path: "coffee-1.jpg",
+          path: "good-1.jpg",
           text: "Solimo Coffee Beans 2kg",
-          price: "10.73$",
+          price: 10.73,
+          country: "Brazil",
         },
         {
           id: 3,
-          path: "coffee-1.jpg",
+          path: "good-1.jpg",
           text: "Solimo Coffee Beans 2kg",
-          price: "10.73$",
+          price: 10.73,
+          country: "Brazil",
         },
         {
           id: 4,
-          path: "coffee-1.jpg",
+          path: "good-1.jpg",
           text: "Solimo Coffee Beans 2kg",
-          price: "10.73$",
+          price: 10.73,
+          country: "Brazil",
         },
         {
           id: 5,
-          path: "coffee-1.jpg",
+          path: "good-1.jpg",
           text: "Solimo Coffee Beans 2kg",
-          price: "10.73$",
+          price: 10.73,
+          country: "Brazil",
         },
       ],
     };

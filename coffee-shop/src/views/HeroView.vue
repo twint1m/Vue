@@ -59,30 +59,14 @@
         <div class="row">
           <div class="col-lg-10 offset-lg-1">
             <div class="best__wrapper">
-              <div class="best__item">
-                <img
-                  :src="require(`@/assets/img/${cards[0].path}`)"
-                  :alt="cards[0].path"
-                />
-                <div class="best__item-title">{{ cards[0].text }}</div>
-                <div class="best__item-price">{{ cards[0].price }}</div>
-              </div>
-              <div class="best__item">
-                <img
-                  :src="require(`@/assets/img/${cards[1].path}`)"
-                  :alt="cards[0].path"
-                />
-                <div class="best__item-title">{{ cards[1].text }}</div>
-                <div class="best__item-price">{{ cards[1].price }}</div>
-              </div>
-              <div class="best__item">
-                <img
-                  :src="require(`@/assets/img/${cards[2].path}`)"
-                  :alt="cards[0].path"
-                />
-                <div class="best__item-title">{{ cards[2].text }}</div>
-                <div class="best__item-price">{{ cards[2].price }}</div>
-              </div>
+              <card-component
+                v-for="card in cards"
+                :key="card.id"
+                :name="card.text"
+                :price="card.price"
+                :image="card.path"
+                class-item="best__item"
+              ></card-component>
             </div>
           </div>
         </div>
@@ -98,24 +82,24 @@ export default {
   components: { NavBarComponent, CardComponent },
   data() {
     return {
-      cards: [
+      cards : [
         {
           id: 0,
           path: "coffee-1.jpg",
           text: "Solimo Coffee Beans 2kg",
-          price: "10.73$",
+          price: 10.73,
         },
         {
           id: 1,
-          path: "coffee-1.jpg",
-          text: "Solimo Coffee Beans 2kg",
-          price: "10.73$",
+          path: "coffee-2.jpg",
+          text: "Presto Coffee Beans 1kg",
+          price: 15.99,
         },
         {
           id: 2,
-          path: "coffee-1.jpg",
-          text: "Solimo Coffee Beans 2kg",
-          price: "10.73$",
+          path: "coffee-3.jpg",
+          text: "AROMISTICO Coffee 1kg",
+          price: 6.99,
         },
       ],
     };
